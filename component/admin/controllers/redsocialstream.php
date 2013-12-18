@@ -8,9 +8,7 @@
  */
 defined('_JEXEC') or die('Restricted access');
 
-jimport('joomla.application.component.controller');
-
-class RedsocialstreamsController extends JController
+class RedsocialstreamController extends JControllerLegacy
 {
 	/**
 	 * constructor (registers additional tasks to methods)

@@ -8,9 +8,7 @@
  */
 defined('_JEXEC') or die('Restricted access');
 
-jimport('joomla.application.component.view');
-
-class RedsocialstreamsViewRedsocialstreams extends JView
+class RedsocialstreamViewRedsocialstream extends RedSocialStreamView
 {
 	function display($tpl = null)
 	{
@@ -19,7 +17,6 @@ class RedsocialstreamsViewRedsocialstreams extends JView
 
 		$pane = JPane::getInstance('sliders');
 		JToolBarHelper::title(JText::_('COM_REDSOCIALSTREAM_REDSOCIALSTREAMS'), 'redsocialstream');
-		//DEVNOTE: set document title
 		$document = JFactory::getDocument();
 		$document->setTitle(JText::_('COM_REDSOCIALSTREAM_REDSOCIALSTREAMS'));
 		$this->assignRef('pane', $pane);

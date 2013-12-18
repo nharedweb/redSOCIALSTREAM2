@@ -10,29 +10,14 @@
  */
 defined('_JEXEC') or die;
 
-$controller = JRequest::getCmd('view', 'redsocialstreams');
+// Register component prefix
+RLoader::registerPrefix('RedSocialStream', __DIR__);
 
-//set the controller page
-if (!file_exists(JPATH_COMPONENT . '/controllers' . DS . $controller . '.php'))
-{
+// Register library prefix
+RLoader::registerPrefix('RedSocialStream', JPATH_LIBRARIES . '/redsocialstream');
 
-	$controller = 'posts';
-	JRequest::setVar('controller', 'profiles');
-}
 $document = JFactory::getDocument();
 $document->addStyleSheet(JURI::base() . 'components/com_redsocialstream/assets/css/com_redsocialstream.css');
-
-//set the controller page
-require_once (JPATH_COMPONENT . '/controllers' . DS . $controller . '.php');
-
-// Create the controller helloworldController
-$classname = $controller . 'controller';
-
-//create a new class of classname and set the default task:display
-$controller = new $classname(array('default_task' => 'display'));
-
-// Perform the Request task
-$controller->execute(JRequest::getVar('task'));
 
 JSubMenuHelper::addEntry(JText::_('COM_REDSOCIALSTREAM_REDSOCIALSTREAMS'), 'index.php?option=com_redsocialstream');
 JSubMenuHelper::addEntry(JText::_('COM_REDSOCIALSTREAM_PROFILES'), 'index.php?option=com_redsocialstream&view=profiles');
@@ -41,6 +26,9 @@ JSubMenuHelper::addEntry(JText::_('COM_REDSOCIALSTREAM_POSTS'), 'index.php?optio
 JSubMenuHelper::addEntry(JText::_('COM_REDSOCIALSTREAM_CONFIGURE'), 'index.php?option=com_redsocialstream&view=configure');
 JSubMenuHelper::addEntry(JText::_('COM_REDSOCIALSTREAM_ACCESS_TOKEN'), 'index.php?option=com_redsocialstream&view=access_token');
 JSubMenuHelper::addEntry(JText::_('COM_REDSOCIALSTREAM_POSTFEEDS'), 'index.php?option=com_redsocialstream&view=postfeeds');
-// Redirect if set by the controller
+
+$app = JFactory::getApplication();
+
+$controller = JControllerLegacy::getInstance('RedSocialStream');
+$controller->execute($app->input->get('task'));
 $controller->redirect();
-?>

@@ -81,7 +81,7 @@ defined('_JEXEC') or die;
 							$img = trim($profiletype->img);
 							if ($img != '')
 							{
-								echo '<img src="components/com_redsocialstream/images' . DS . $img . '" /><br>';
+								echo '<img src="components/com_redsocialstream/images/' . $img . '" /><br>';
 							};
 
 							echo '<h4>' . $profiletype->title . '</h4>';

@@ -1,9 +1,7 @@
 <?php
-
 defined('_JEXEC') or die;
-jimport('joomla.application.component.controller');
 
-class redsocialstreamController extends JController
+class RedsocialstreamController extends JControllerLegacy
 {
 	function display()
 	{
@@ -37,7 +35,6 @@ class redsocialstreamController extends JController
 
 	}
 
-
 	function save()
 	{
 		$post = JRequest::get('post');
@@ -47,9 +44,7 @@ class redsocialstreamController extends JController
 		if ($model->store($post))
 		{
 			$msg = JText::_('BLOG SAVED');
-
 			//$model->checkin();
-
 		}
 		else
 		{
@@ -57,8 +52,6 @@ class redsocialstreamController extends JController
 		}
 
 		$link = $_SERVER['HTTP_REFERER'];
-
 		$this->setRedirect($link, $msg);
 	}
-
 }

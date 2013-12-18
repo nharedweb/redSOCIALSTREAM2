@@ -27,7 +27,7 @@ CREATE TABLE IF NOT EXISTS `#__redsocialstream_posts` (
   `title` varchar(256) NOT NULL,
   `thumb_uri` varchar(256) NOT NULL,
   `message` varchar(518) NOT NULL,
-  `sorce_link` varchar(518) NOT NULL,
+  `source_link` varchar(518) NOT NULL,
   `created_time` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
   `duration` varchar(518) NOT NULL,
   `profile_id` int(11) NOT NULL,
@@ -53,14 +53,14 @@ CREATE TABLE IF NOT EXISTS `#__redsocialstream_settings` (
 -- Data `jos_redsocialstream_settings`
 --
 
-INSERT INTO `#__redsocialstream_settings` (`id`, `datalabel`, `dataname`, `datatype`, `data`) VALUES
-(1, 'COM_REDSOCIALSTREAM_INTROTEXT','introtext', 'html', ''),
-(2, 'COM_REDSOCIALSTREAM_FACEBOOK_APPLICATION_ID','app_id', 'text', ''),
-(3, 'COM_REDSOCIALSTREAM_FACEBOOK_APPLICATION_SECRET', 'app_secret', 'text', ''),
-(4, 'COM_REDSOCIALSTREAM_TWITTER_CONSUMER_KEY', 'twitter_consumer_key', 'text', ''),
-(5, 'COM_REDSOCIALSTREAM_TWITTER_CONSUMER_SECRET', 'twitter_consumer_sec', 'text', ''),
-(6, 'COM_REDSOCIALSTREAM_LINKEDIN_API_KEY', 'linked_api_key', 'text', ''),
-(7, 'COM_REDSOCIALSTREAM_LINKEDIN_SECRET_KEY', 'linked_secret_key', 'text', '');
+INSERT INTO `#__redsocialstream_settings` (`datalabel`, `dataname`, `datatype`, `data`) VALUES
+('COM_REDSOCIALSTREAM_INTROTEXT','introtext', 'html', ''),
+('COM_REDSOCIALSTREAM_FACEBOOK_APPLICATION_ID','app_id', 'text', ''),
+('COM_REDSOCIALSTREAM_FACEBOOK_APPLICATION_SECRET', 'app_secret', 'text', ''),
+('COM_REDSOCIALSTREAM_TWITTER_CONSUMER_KEY', 'twitter_consumer_key', 'text', ''),
+('COM_REDSOCIALSTREAM_TWITTER_CONSUMER_SECRET', 'twitter_consumer_sec', 'text', ''),
+('COM_REDSOCIALSTREAM_LINKEDIN_API_KEY', 'linked_api_key', 'text', ''),
+('COM_REDSOCIALSTREAM_LINKEDIN_SECRET_KEY', 'linked_secret_key', 'text', '');
 
 --
 -- Structure `jos_redsocialstream_profiletype`
@@ -79,11 +79,11 @@ CREATE TABLE IF NOT EXISTS `#__redsocialstream_profiletype` (
 -- Data `jos_redsocialstream_profiletype`
 --
 
-INSERT INTO `#__redsocialstream_profiletype` (`id`, `title`, `img`, `ordering`, `linkprefix`) VALUES
-(1, 'facebook', 'facebook.jpg', 1, 'http://facebook.com/'),
-(2, 'twitter', 'twitter.jpg', 2, 'http://twitter.com/'),
-(3, 'youtube', 'youtube.jpg', 3, 'http://youtube.com/'),
-(4, 'linkedin', 'linkedin.jpg', 4, '');
+INSERT INTO `#__redsocialstream_profiletype` (`title`, `img`, `ordering`, `linkprefix`) VALUES
+('facebook', 'facebook.jpg', 1, 'http://facebook.com/'),
+('twitter', 'twitter.jpg', 2, 'http://twitter.com/'),
+('youtube', 'youtube.jpg', 3, 'http://youtube.com/'),
+('linkedin', 'linkedin.jpg', 4, '');
 
 
 --

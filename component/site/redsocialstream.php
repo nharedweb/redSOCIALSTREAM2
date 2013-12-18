@@ -9,14 +9,14 @@ $option = JRequest::getCmd('option');
 $controller = JRequest::getCmd('view', 'redsocialstream');
 
 //set the default controller page
-if (!file_exists(JPATH_COMPONENT . '/controllers' . DS . $controller . '.php'))
+if (!file_exists(JPATH_COMPONENT . '/controllers/' . $controller . '.php'))
 {
 	$controller = 'redsocialstream';
 
 }
 
 //set the controller page 
-require_once JPATH_COMPONENT . '/controllers' . DS . $controller . '.php';
+require_once JPATH_COMPONENT . '/controllers/' . $controller . '.php';
 
 // Create the controller
 $classname = $controller . 'controller';

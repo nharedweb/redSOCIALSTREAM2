@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <extension type="library" method="upgrade" version="2.5">
     <name>redSOCIALSTREAM - Libraries</name>
-    <libraryname>redshopretail</libraryname>
+    <libraryname>redsocialstream</libraryname>
     <creationDate>Oct 2013</creationDate>
     <author>redCOMPONENT</author>
     <authorEmail>email@redcomponent.com</authorEmail>
