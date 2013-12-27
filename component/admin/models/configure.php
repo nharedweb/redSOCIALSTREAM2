@@ -11,7 +11,7 @@ defined('_JEXEC') or die;
 jimport('joomla.application.component.model');
 
 
-class configureModelconfigure extends JModel
+class RedsocialstreamModelConfigure extends JModelLegacy
 {
 	var $_id = null;
 

@@ -8,7 +8,7 @@
  */
 defined('_JEXEC') or die;
 jimport('joomla.application.component.view');
-class postfeedsViewpostfeeds extends JView
+class RedsocialstreamViewPostfeeds extends JViewLegacy
 {
 	function __construct($config = array())
 	{

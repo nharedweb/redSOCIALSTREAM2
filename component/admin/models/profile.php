@@ -10,7 +10,7 @@ defined('_JEXEC') or die;
 
 jimport('joomla.application.component.model');
 
-class profileModelprofile extends JModel
+class RedsocialstreamModelProfile extends JModelLegacy
 {
 	var $_posts = null;
 	var $_data = null;

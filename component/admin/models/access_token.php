@@ -14,7 +14,7 @@ require_once(JPATH_SITE . '/components/com_redsocialstream/helpers/helper.php');
 include(JPATH_SITE . '/components/com_redsocialstream/helpers/linkedin/linkedin.php');
 require_once(JPATH_SITE . '/components/com_redsocialstream/helpers/twitter/OAuth.php');
 
-class access_tokenModelaccess_token extends JModel
+class RedsocialstreamModelAccess_token extends JModelLegacy
 {
 	function getData()
 	{
