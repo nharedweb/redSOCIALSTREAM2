@@ -11,11 +11,11 @@ defined('_JEXEC') or die('Restricted access');
 
 jimport('joomla.application.component.controller');
 
-class configureController extends JController
+class RedSocialStreamControllerConfigure extends RControllerAdmin
 {
-	function __construct($default = array())
+	function __construct($config = array())
 	{
-		parent::__construct($default);
+		parent::__construct($config);
 		$this->registerTask('save', 'apply', 'cancel');
 	}
 

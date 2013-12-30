@@ -10,11 +10,11 @@ defined('_JEXEC') or die('Restricted access');
 
 jimport('joomla.application.component.controller');
 
-class access_tokenController extends JController
+class RedSocialStreamControllerAccess_token extends RControllerAdmin
 {
-	function __construct($default = array())
+	function __construct($config = array())
 	{
-		parent::__construct($default);
+		parent::__construct($config);
 	}
 
 	function cancel()

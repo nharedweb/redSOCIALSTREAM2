@@ -7,15 +7,19 @@
  * @license     GNU General Public License version 2 or later, see LICENSE.
  */
 defined('_JEXEC') or die('Restricted access');
-
-class RedSocialStreamControllerRedsocialsstream extends JControllerLegacy
+/**
+ * Dashboard View.
+ *
+ * @package     RedSocialStream.Admin
+ * @subpackage  Views
+ * @since       1.0
+ */
+class RedSocialStreamViewDashboard extends RedSocialStreamView
 {
 	/**
-	 * constructor (registers additional tasks to methods)
-	 * @return void
+	 * The sidebar layout name to display.
+	 *
+	 * @var  boolean
 	 */
-	function __construct($config = array())
-	{
-		parent::__construct($config);
-	}
+	protected $sidebarLayout = 'sidebar.dashboard';
 }

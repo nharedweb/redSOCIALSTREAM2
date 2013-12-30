@@ -1,39 +1,60 @@
 <?php
 /**
  * @package     redSocialstream
- * @subpackage  Models
+ * @subpackage  Controllers
  *
  * @copyright   Copyright (C) 2012 - 2013 redCOMPONENT.com. All rights reserved.
  * @license     GNU General Public License version 2 or later, see LICENSE.
  */
-defined('_JEXEC') or die;
+defined('_JEXEC') or die('Restricted access');
 
-jimport('joomla.application.component.model');
-
-class RedsocialstreamModelProfiles extends JModelLegacy
+class RedsocialstreamModelProfiles extends RModelList
 {
 	var $_id = null;
 	var $_data = null;
 	var $_total = null;
 	var $_pagination = null;
 	var $_table_prefix = null;
-	var $_context = null;
 
-	function __construct()
-	{
-		parent::__construct();
-		$mainframe      = JFactory::getApplication();
-		$this->_context = "profiles";
+    /**
+     * Context for session
+     *
+     * @var  string
+     */
+    protected $_context = 'com_redsocialstream.profiles';
 
-		$this->_table_prefix = '#__redsocialstream';
+    /**
+     * Constructor
+     *
+     * @param   array  $config  Configuration array
+     */
+    public function __construct($config = array())
+    {
+        if (empty($config['filter_fields']))
+        {
+            $config['filter_fields'] = array(
+                'id', 'c.id',
+                'title', 'c.title',
+                'published', 'c.state',
+                'created_date', 'c.created_date',
+                'modified_date', 'c.modified_date',
+                'created_by', 'c.created_by',
+                'modified_by', 'c.modified_by'
+            );
+        }
 
-		$limit      = $mainframe->getUserStateFromRequest($this->_context . 'limit', 'limit', $mainframe->getCfg('list_limit'), 0);
-		$limitstart = $mainframe->getUserStateFromRequest($this->_context . 'limitstart', 'limitstart', 0);
-		$array      = JRequest::getVar('cid', 0, '', 'array');
-		$this->setId((int) $array[0]);
+        $app      = JFactory::getApplication();
+        $this->_table_prefix = '#__redsocialstream';
 
-		$this->setState('limit', $limit);
-		$this->setState('limitstart', $limitstart);
+        $limit      = $app->getUserStateFromRequest($this->_context . 'limit', 'limit', $app->getCfg('list_limit'), 0);
+        $limitstart = $app->getUserStateFromRequest($this->_context . 'limitstart', 'limitstart', 0);
+        $array      = $app->input->get('cid', 0, '', 'array');
+        $this->setId((int) $array[0]);
+
+        $this->setState('limit', $limit);
+        $this->setState('limitstart', $limitstart);
+
+        parent::__construct($config);
 	}
 
 	function setId($id)
@@ -78,7 +99,7 @@ class RedsocialstreamModelProfiles extends JModelLegacy
 		return $this->_pagination;
 	}
 
-	function _buildQuery()
+	function getListQuery()
 	{
 		$orderby = $this->_buildContentOrderBy();
 		$query   = '

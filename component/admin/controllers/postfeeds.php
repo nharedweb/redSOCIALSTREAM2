@@ -16,7 +16,7 @@ require_once(JPATH_SITE . '/components/com_redsocialstream/helpers/twitter/OAuth
 require_once(JPATH_SITE . '/components/com_redsocialstream/helpers/facebook/facebook.php');
 require_once(JPATH_SITE . '/components/com_redsocialstream/helpers/linkedin/linkedin.php');
 
-class PostfeedsController extends JController
+class RedSocialStreamControllerPostfeeds extends RControllerAdmin
 {
 	function display()
 	{

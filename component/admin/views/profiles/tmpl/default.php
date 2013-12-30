@@ -1,48 +1,39 @@
 <?php
 /**
- * @copyright Copyright (C) 2012 - 2013 redCOMPONENT.com. All rights reserved.
- * @license   GNU/GPL, see license.txt or http://www.gnu.org/copyleft/gpl.html
- *            Developed by email@recomponent.com - redCOMPONENT.com
+ * @package     redSocialstream
+ * @subpackage  Views
  *
- * redSocialstream can be downloaded from www.redcomponent.com
- * redSocialstream is free software; you can redistribute it and/or
- * modify it under the terms of the GNU General Public License 2
- * as published by the Free Software Foundation.
- *
- * You should have received a copy of the GNU General Public License
- * along with redSocialstream; if not, write to the Free Software
- * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
+ * @copyright   Copyright (C) 2012 - 2013 redCOMPONENT.com. All rights reserved.
+ * @license     GNU General Public License version 2 or later, see LICENSE.
  */
 defined('_JEXEC') or die('Restricted access');
-//Ordering allowed ?
+
 $ordering = ($this->lists['order'] == 'ordering');
-//DEVNOTE: import html tooltips
 JHTML::_('behavior.tooltip');
 ?>
 
 <script language="javascript" type="text/javascript">
-	Joomla.submitbutton = function (pressbutton) {
-		submitbutton(pressbutton);
-	}
-	submitbutton = function (pressbutton) {
+Joomla.submitbutton = function (pressbutton) {
+    submitbutton(pressbutton);
+}
+submitbutton = function (pressbutton) {
 
-		var form = document.adminForm;
-		if (pressbutton) {
-			form.task.value = pressbutton;
-		}
+    var form = document.adminForm;
+    if (pressbutton) {
+        form.task.value = pressbutton;
+    }
 
-		if ((pressbutton == 'add') || (pressbutton == 'edit') || (pressbutton == 'publish') || (pressbutton == 'unpublish') || (pressbutton == 'remove')) {
-			form.view.value = "profile";
-		}
-		try {
-			form.onsubmit();
-		}
-		catch (e) {
-		}
+    if ((pressbutton == 'add') || (pressbutton == 'edit') || (pressbutton == 'publish') || (pressbutton == 'unpublish') || (pressbutton == 'remove')) {
+        form.view.value = "profile";
+    }
+    try {
+        form.onsubmit();
+    }
+    catch (e) {
+    }
 
-		form.submit();
-	}
-
+    form.submit();
+}
 
 </script>
 <form action="<?php echo $this->request_url; ?>" method="post" name="adminForm" id="adminForm">
@@ -55,7 +46,6 @@ JHTML::_('behavior.tooltip');
 				$row->checked_out = 0;
 				$link = JRoute::_('index.php?option=com_redsocialstream&controller=configure&task=edit');
 			}?>
-
 
 			<thead>
 			<tr>

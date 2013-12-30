@@ -10,7 +10,7 @@ defined('_JEXEC') or die('Restricted access');
 
 jimport('joomla.application.component.controller');
 
-class groupController extends JController
+class RedSocialStreamControllerGroup extends RControllerForm
 {
 	function __construct($default = array())
 	{

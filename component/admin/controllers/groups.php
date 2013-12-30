@@ -10,7 +10,7 @@ defined('_JEXEC') or die;
 
 jimport('joomla.application.component.controller');
 
-class groupsController extends JController
+class RedSocialStreamControllerGroups extends RControllerAdmin
 {
 	function display()
 	{
