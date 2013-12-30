@@ -8,7 +8,7 @@
  */
 defined('_JEXEC') or die('Restricted access');
 
-class RedsocialstreamViewProfiles extends RedSocialStreamView
+class RedSocialStreamViewProfiles extends RedSocialStreamView
 {
 //	function display($tpl = null)
 //	{

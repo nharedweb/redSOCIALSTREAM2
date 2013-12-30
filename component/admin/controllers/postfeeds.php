@@ -8,8 +8,6 @@
  */
 defined('_JEXEC') or die;
 
-jimport('joomla.application.component.controller');
-
 require_once(JPATH_SITE . '/components/com_redsocialstream/helpers/helper.php');
 require_once(JPATH_SITE . '/components/com_redsocialstream/helpers/twitter/twitterOAuth.php');
 require_once(JPATH_SITE . '/components/com_redsocialstream/helpers/twitter/OAuth.php');

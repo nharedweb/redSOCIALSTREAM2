@@ -9,8 +9,6 @@
 
 defined('_JEXEC') or die('Restricted access');
 
-jimport('joomla.application.component.controller');
-
 class RedSocialStreamControllerConfigure extends RControllerAdmin
 {
 	function __construct($config = array())

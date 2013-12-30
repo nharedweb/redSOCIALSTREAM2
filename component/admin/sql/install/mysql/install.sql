@@ -1,4 +1,35 @@
 --
+-- Structure `jos_redsocialstream_group`
+--
+
+CREATE TABLE IF NOT EXISTS `#__redsocialstream_groups` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(100) DEFAULT NULL,
+  `title` varchar(200) NOT NULL,
+  `intro` text NOT NULL DEFAULT '',
+  `link` varchar(200) NOT NULL,
+  `ordering` int(11) DEFAULT '0',
+  `state` tinyint(4) DEFAULT '1',
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+-- ----------------------------------------------------------------------------------
+--
 -- Structure `jos_redsocialstream_profilereference`
 --
 
@@ -86,20 +117,7 @@ INSERT INTO `#__redsocialstream_profiletype` (`title`, `img`, `ordering`, `linkp
 ('linkedin', 'linkedin.jpg', 4, '');
 
 
---
--- Structure `jos_redsocialstream_group`
---
 
-CREATE TABLE IF NOT EXISTS `#__redsocialstream_group` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `title` varchar(100) DEFAULT NULL,
-  `subtitle` text NOT NULL,
-  `introtitle` varchar(200) NOT NULL DEFAULT '',
-  `groupsociallink` varchar(200) NOT NULL,
-  `ordering` int(11) DEFAULT '0',
-  `published` tinyint(4) DEFAULT '1',
-  PRIMARY KEY (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8;
 
 --
 -- Structure `jos_redsocialstream_linkedin_connections`

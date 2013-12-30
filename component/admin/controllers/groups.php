@@ -8,50 +8,48 @@
  */
 defined('_JEXEC') or die;
 
-jimport('joomla.application.component.controller');
-
 class RedSocialStreamControllerGroups extends RControllerAdmin
 {
-	function display()
-	{
-		parent::display();
-	}
-
-	function __construct($default = array())
-	{
-		parent::__construct($default);
-	}
-
-	function cancel()
-	{
-		$this->setRedirect('index.php');
-	}
-
-	function orderup()
-	{
-		$model = $this->getModel('groups');
-		$model->move(-1);
-
-		$this->setRedirect('index.php?option=com_redsocialstream&view=groups');
-	}
-
-	function orderdown()
-	{
-		$model = $this->getModel('groups');
-		$model->move(1);
-
-		$this->setRedirect('index.php?option=com_redsocialstream&view=groups');
-	}
-
-	function saveorder()
-	{
-		$cid   = JRequest::getVar('cid', array(0), 'post', 'array');
-		$order = JRequest::getVar('order', array(0), 'post', 'array');
-
-		$model = $this->getModel('groups');
-		$model->saveorder($cid, $order);
-
-		$msg = JText::_('COM_REDSOCIALSTREAM_ORDERING_SAVED');
-		$this->setRedirect('index.php?option=com_redsocialstream&view=groups', $msg);
-	}
+//	function display()
+//	{
+//		parent::display();
+//	}
+//
+//	function __construct($default = array())
+//	{
+//		parent::__construct($default);
+//	}
+//
+//	function cancel()
+//	{
+//		$this->setRedirect('index.php');
+//	}
+//
+//	function orderup()
+//	{
+//		$model = $this->getModel('groups');
+//		$model->move(-1);
+//
+//		$this->setRedirect('index.php?option=com_redsocialstream&view=groups');
+//	}
+//
+//	function orderdown()
+//	{
+//		$model = $this->getModel('groups');
+//		$model->move(1);
+//
+//		$this->setRedirect('index.php?option=com_redsocialstream&view=groups');
+//	}
+//
+//	function saveorder()
+//	{
+//		$cid   = JRequest::getVar('cid', array(0), 'post', 'array');
+//		$order = JRequest::getVar('order', array(0), 'post', 'array');
+//
+//		$model = $this->getModel('groups');
+//		$model->saveorder($cid, $order);
+//
+//		$msg = JText::_('COM_REDSOCIALSTREAM_ORDERING_SAVED');
+//		$this->setRedirect('index.php?option=com_redsocialstream&view=groups', $msg);
+//	}
 }

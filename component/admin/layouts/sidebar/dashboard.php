@@ -10,16 +10,16 @@
 defined('JPATH_REDCORE') or die;
 ?>
 <ul class="nav nav-tabs nav-stacked">
+    <li>
+        <a href="<?php echo JRoute::_('index.php?option=com_redsocialstream&view=group&layout=edit') ?>">
+            <i class="icon-globe"></i>
+            <?php echo JText::_('COM_REDSOCIALSTREAM_GROUP_CREATE') ?>
+        </a>
+    </li>
 	<li>
 		<a href="<?php echo JRoute::_('index.php?option=com_redsocialstream&view=profile&layout=edit') ?>">
 			<i class="icon-user"></i>
 			<?php echo JText::_('COM_REDSOCIALSTREAM_PROFILE_CREATE') ?>
-		</a>
-	</li>
-	<li>
-		<a href="<?php echo JRoute::_('index.php?option=com_redsocialstream&view=group&layout=edit') ?>">
-			<i class="icon-globe"></i>
-			<?php echo JText::_('COM_REDSOCIALSTREAM_GROUP_CREATE') ?>
 		</a>
 	</li>
 	<li>

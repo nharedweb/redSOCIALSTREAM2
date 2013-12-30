@@ -8,9 +8,7 @@
  */
 defined('_JEXEC') or die;
 
-jimport('joomla.application.component.model');
-
-class RedsocialstreamModelPosts extends JModelLegacy
+class RedSocialStreamModelPosts extends JModelLegacy
 {
 	var $_data = null;
 	var $_total = null;

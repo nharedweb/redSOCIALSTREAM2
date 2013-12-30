@@ -10,7 +10,7 @@ defined('_JEXEC') or die;
 
 jimport('joomla.application.component.model');
 
-class RedsocialstreamModelRedsocialstreams extends JModelLegacy
+class RedSocialStreamModelRedsocialstreams extends JModelLegacy
 {
 	function __construct()
 	{

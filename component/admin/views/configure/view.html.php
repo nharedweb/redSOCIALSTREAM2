@@ -8,7 +8,7 @@
  */
 defined('_JEXEC') or die;
 jimport('joomla.application.component.view');
-class RedsocialstreamViewConfigure extends JViewLegacy
+class RedSocialStreamViewConfigure extends JViewLegacy
 {
 	function display($tpl = null)
 	{
