@@ -6,7 +6,7 @@
  * @copyright   Copyright (C) 2012 - 2013 redCOMPONENT.com. All rights reserved.
  * @license     GNU General Public License version 2 or later, see LICENSE.
  */
-defined('_JEXEC') or die('Restricted access');
+defined('_JEXEC') or die;
 
 class RedSocialStreamViewProfiles extends RedSocialStreamView
 {
@@ -104,7 +104,7 @@ class RedSocialStreamViewProfiles extends RedSocialStreamView
      */
     public function getTitle()
     {
-        return JText::_('COM_RESOCIALSTREAM_PROFILES_LIST_TITLE');
+        return JText::_('COM_REDSOCIALSTREAM_PROFILES_LIST_TITLE');
     }
 
     /**
@@ -114,48 +114,47 @@ class RedSocialStreamViewProfiles extends RedSocialStreamView
      */
     public function getToolbar()
     {
-        $canDo = RedshopbHelpersAcl::getActions();
+        $canDo = RedSocialStreamHelpersAcl::getActions();
         $user = JFactory::getUser();
 
         $firstGroup = new RToolbarButtonGroup;
         $secondGroup = new RToolbarButtonGroup;
 
-
-        $new = RToolbarBuilder::createNewButton('category.add');
+        $new = RToolbarBuilder::createNewButton('profile.add');
         $firstGroup->addButton($new);
 
-        $edit = RToolbarBuilder::createEditButton('category.edit');
+        $edit = RToolbarBuilder::createEditButton('profile.edit');
         $firstGroup->addButton($edit);
 
-        $publish = RToolbarBuilder::createPublishButton('categories.publish');
-        $unpublish = RToolbarBuilder::createUnpublishButton('categories.unpublish');
+        $publish = RToolbarBuilder::createPublishButton('profiles.publish');
+        $unpublish = RToolbarBuilder::createUnpublishButton('profiles.unpublish');
 
         $firstGroup->addButton($publish)
             ->addButton($unpublish);
 
-        $delete = RToolbarBuilder::createDeleteButton('categories.delete');
+        $delete = RToolbarBuilder::createDeleteButton('profiles.delete');
         $secondGroup->addButton($delete);
 
-//        if ($user->authorise('core.admin', 'com_redshopb'))
+//        if ($user->authorise('core.admin', 'com_redsocialstream'))
 //        {
 //            // Add / edit
-//            if ($canDo->get('core.create') || (count($user->getAuthorisedCategories('com_redshopb', 'core.create'))) > 0)
+//            if ($canDo->get('core.create') || (count($user->getAuthorisedCategories('com_redsocialstream', 'core.create'))) > 0)
 //            {
-//                $new = RToolbarBuilder::createNewButton('category.add');
+//                $new = RToolbarBuilder::createNewButton('profile.add');
 //                $firstGroup->addButton($new);
 //            }
 //
 //            if ($canDo->get('core.edit'))
 //            {
-//                $edit = RToolbarBuilder::createEditButton('category.edit');
+//                $edit = RToolbarBuilder::createEditButton('profile.edit');
 //                $firstGroup->addButton($edit);
 //            }
 //
 //            // Publish / Unpublish
 //            if ($canDo->get('core.edit.state'))
 //            {
-//                $publish = RToolbarBuilder::createPublishButton('categories.publish');
-//                $unpublish = RToolbarBuilder::createUnpublishButton('categories.unpublish');
+//                $publish = RToolbarBuilder::createPublishButton('profiles.publish');
+//                $unpublish = RToolbarBuilder::createUnpublishButton('profiles.unpublish');
 //
 //                $firstGroup->addButton($publish)
 //                    ->addButton($unpublish);
@@ -164,7 +163,7 @@ class RedSocialStreamViewProfiles extends RedSocialStreamView
 //            // Delete / Trash
 //            if ($canDo->get('core.delete'))
 //            {
-//                $delete = RToolbarBuilder::createDeleteButton('categories.delete');
+//                $delete = RToolbarBuilder::createDeleteButton('profiles.delete');
 //                $secondGroup->addButton($delete);
 //            }
 //        }

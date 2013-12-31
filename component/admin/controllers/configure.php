@@ -7,100 +7,35 @@
  * @license     GNU General Public License version 2 or later, see LICENSE.
  */
 
-defined('_JEXEC') or die('Restricted access');
+defined('_JEXEC') or die;
 
-class RedSocialStreamControllerConfigure extends RControllerAdmin
+class RedSocialStreamControllerConfigure extends RControllerForm
 {
-	function __construct($config = array())
-	{
-		parent::__construct($config);
-		$this->registerTask('save', 'apply', 'cancel');
-	}
+    /**
+     * The prefix to use with controller messages.
+     *
+     * @var  string
+     */
+    protected $text_prefix = 'COM_REDSOCIALSTREAM_CONFIGURE';
 
-	function save()
-	{
-		//echo "save";
-		//die();
-	}
+    /**
+     * Constructor.
+     *
+     * @param   array  $config  An optional associative array of configuration settings.
+     */
+    public function __construct($config = array())
+    {
+        parent::__construct($config);
+    }
 
-	function apply()
-	{
-		$db = JFactory::getDBO();
-		$q  = "SELECT * FROM #__redsocialstream_settings";
-		$db->setQuery($q);
-		$settingsrows = $db->loadObjectList();
+    public function save($key = null, $urlVar = null)
+    {
+        $task = $this->getTask();
+        if($task == '')
+        {
+            $this->view_list = 'dashboard';
+        }
 
-		foreach ($settingsrows as $row)
-		{
-			if (strtolower(JRequest::getVar('settings_' . $row->dataname . '_save')) == 'true')
-			{
-				if (strtolower($row->datatype) == 'html')
-				{
-					$data = JRequest::getVar('settings_' . $row->dataname, '', 'post', 'string', JREQUEST_ALLOWRAW);
-				}
-				else
-				{
-					$data = JRequest::getVar('settings_' . $row->dataname);
-				}
-
-				$q = ' update #__redsocialstream_settings set data = "' . mysql_real_escape_string($data) . '" where dataname = "' . $row->dataname . '" ';
-				$db->setQuery($q);
-				$db->query();
-
-			}
-
-		}
-
-		$link = 'index.php?option=com_redsocialstream&view=configure';
-		$this->setRedirect($link, $msg);
-	}
-
-	function cancel()
-	{
-		$link = 'index.php?option=com_redsocialstream';
-		$this->setRedirect($link, $msg);
-	}
-
-	function saveorder()
-	{
-		$model = $this->getModel('configure');
-		if ($model->saveorder())
-		{
-			$this->setRedirect('index.php?option=com_redsocialstream&view=configure');
-		}
-		else
-		{
-			$this->setRedirect('index.php?option=com_redsocialstream&view=configure', JText::_('COM_REDFORM_ERROR_REORDERING'));
-		}
-	}
-
-	/**
-	 * Logic to orderup
-	 *
-	 * @access public
-	 * @return void
-	 * @since 0.9
-	 */
-	function orderup()
-	{
-		$model = $this->getModel('configure');
-		$model->move(-1);
-
-		$this->setRedirect('index.php?option=com_redsocialstream&view=configure');
-	}
-
-	/**
-	 * Logic to orderdown
-	 *
-	 * @access public
-	 * @return void
-	 * @since 0.9
-	 */
-	function orderdown()
-	{
-		$model = $this->getModel('configure');
-		$model->move(1);
-
-		$this->setRedirect('index.php?option=com_redsocialstream&view=configure');
-	}
+        parent::save($key, $urlVar);
+    }
 }

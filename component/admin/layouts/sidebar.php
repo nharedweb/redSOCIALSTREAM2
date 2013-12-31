@@ -72,13 +72,8 @@ if( isset($data['active']) )
         <?php endif; ?>
     </li>
     <li>
-        <?php if ($active === 'configures') : ?>
-            <a class="active" href="<?php echo JRoute::_('index.php?option=com_redsocialstream&view=configures') ?>">
-                <i class="icon-ticket"></i>
-                <?php echo JText::_('COM_REDSOCIALSTREAM_CONFIGURES_LIST_TITLE') ?>
-            </a>
-        <?php else : ?>
-            <a href="<?php echo JRoute::_('index.php?option=com_redsocialstream&view=configures') ?>">
+        <?php if ($active !== 'configure') : ?>
+            <a class="active" href="<?php echo JRoute::_('index.php?option=com_redsocialstream&view=configure') ?>">
                 <i class="icon-ticket"></i>
                 <?php echo JText::_('COM_REDSOCIALSTREAM_CONFIGURES_LIST_TITLE') ?>
             </a>

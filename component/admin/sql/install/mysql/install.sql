@@ -9,18 +9,59 @@ CREATE TABLE IF NOT EXISTS `#__redsocialstream_groups` (
   `intro` text NOT NULL DEFAULT '',
   `link` varchar(200) NOT NULL,
   `ordering` int(11) DEFAULT '0',
+  `created_date` datetime NULL DEFAULT NULL,
+  `updated_date` datetime NULL DEFAULT NULL,
   `state` tinyint(4) DEFAULT '1',
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM  DEFAULT CHARSET=utf8;
 
+CREATE TABLE IF NOT EXISTS `#__redsocialstream_profiles_types` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(200) DEFAULT NULL,
+  `title` varchar(200) DEFAULT NULL,
+  `img` varchar(200) DEFAULT NULL,
+  `ordering` int(11) NOT NULL DEFAULT '0',
+  `link_prefix` varchar(200) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=9 ;
 
+INSERT INTO `#__redsocialstream_profiles_types` (`name`, `title`, `img`, `ordering`, `link_prefix`) VALUES
+('facebook', 'facebook', 'facebook.jpg', 1, 'http://facebook.com/'),
+('twitter', 'twitter', 'twitter.jpg', 2, 'http://twitter.com/'),
+('youtube', 'youtube', 'youtube.jpg', 3, 'http://youtube.com/'),
+('linkedin', 'linkedin', 'linkedin.jpg', 4, 'http://linkedin.com/');
 
+CREATE TABLE IF NOT EXISTS `#__redsocialstream_profiles` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `type_id` int(11) DEFAULT NULL,
+  `group_id` int(11) NOT NULL DEFAULT '0',
+  `name` varchar(200) DEFAULT NULL,
+  `title` varchar(200) NOT NULL,
+  `ordering` int(11) NOT NULL DEFAULT '0',
+  `created_date` datetime NULL DEFAULT NULL,
+  `updated_date` datetime NULL DEFAULT NULL,
+  `state` int(11) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8;
 
+CREATE TABLE IF NOT EXISTS `#__redsocialstream_configures` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `fb_key` varchar(200) DEFAULT NULL,
+  `fb_secret` varchar(200) DEFAULT NULL,
+  `fb_intro` text,
+  `fb_type_id` int(11) DEFAULT NULL,
 
+  `tw_key` varchar(200) DEFAULT NULL,
+  `tw_secret` varchar(200) DEFAULT NULL,
+  `tw_intro` text,
+  `tw_type_id` int(11) DEFAULT NULL,
 
-
-
-
+  `lk_key` varchar(200) DEFAULT NULL,
+  `lk_secret` varchar(200) DEFAULT NULL,
+  `lk_intro` text,
+  `lk_type_id` int(11) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=4 ;
 
 
 

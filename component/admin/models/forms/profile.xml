@@ -13,8 +13,8 @@
                 name="name"
                 type="text"
                 class="inputbox"
-                label="COM_REDSOCIALSTREAM_GROUP_FIELD_NAME_LABEL"
-                description="COM_REDSOCIALSTREAM_GROUP_FIELD_NAME_DESC"
+                label="COM_REDSOCIALSTREAM_PROFILE_FIELD_NAME_LABEL"
+                description="COM_REDSOCIALSTREAM_PROFILE_FIELD_NAME_DESC"
                 required="true"
                 />
 
@@ -22,26 +22,34 @@
                 name="title"
                 type="text"
                 class="inputbox"
-                label="COM_REDSOCIALSTREAM_GROUP_FIELD_TITLE_LABEL"
-                description="COM_REDSOCIALSTREAM_GROUP_FIELD_TITLE_DESC"
+                label="COM_REDSOCIALSTREAM_PROFILE_FIELD_TITLE_LABEL"
+                description="COM_REDSOCIALSTREAM_PROFILE_FIELD_TITLE_DESC"
                 required="true"
                 />
 
         <field
-                name="intro"
-                type="editor"
+                name="type_id"
+                type="ptypes"
                 class="inputbox"
-                label="COM_REDSOCIALSTREAM_GROUP_FIELD_INTRO_LABEL"
-                description="COM_REDSOCIALSTREAM_GROUP_FIELD_INTRO_DESC"
+                label="COM_REDSOCIALSTREAM_PROFILE_FIELD_TYPE_LABEL"
+                description="COM_REDSOCIALSTREAM_PROFILE_FIELD_TYPE_DESC"
                 />
 
         <field
-                name="link"
+                name="group_id"
+                type="groups"
+                class="inputbox"
+                label="COM_REDSOCIALSTREAM_PROFILE_FIELD_GROUP_LABEL"
+                description="COM_REDSOCIALSTREAM_PROFILE_FIELD_GROUP_DESC"
+                />
+        <field
+                name="ordering"
                 type="text"
                 class="inputbox"
-                label="COM_REDSOCIALSTREAM_GROUP_FIELD_LINK_LABEL"
-                description="COM_REDSOCIALSTREAM_GROUP_FIELD_LINK_DESC"
+                label="COM_REDSOCIALSTREAM_FIELD_ORDERING_LABEL"
+                description="COM_REDSOCIALSTREAM_FIELD_ORDERING_DESC"
                 />
+
         <field
                 name="state"
                 type="radio"

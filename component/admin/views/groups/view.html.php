@@ -124,6 +124,12 @@ class RedSocialStreamViewGroups extends RedSocialStreamView
         $edit = RToolbarBuilder::createEditButton('group.edit');
         $firstGroup->addButton($edit);
 
+        $publish = RToolbarBuilder::createPublishButton('groups.publish');
+        $unpublish = RToolbarBuilder::createUnpublishButton('groups.unpublish');
+
+        $firstGroup->addButton($publish)
+            ->addButton($unpublish);
+
         $delete = RToolbarBuilder::createDeleteButton('groups.delete');
         $secondGroup->addButton($delete);
 
