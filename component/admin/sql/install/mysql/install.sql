@@ -46,20 +46,23 @@ CREATE TABLE IF NOT EXISTS `#__redsocialstream_profiles` (
 
 CREATE TABLE IF NOT EXISTS `#__redsocialstream_configures` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
+  `fb_profile_id` int(11) NOT NULL DEFAULT 0,
+  `fb_type_id` int(11) NOT NULL DEFAULT 0,
   `fb_key` varchar(200) DEFAULT NULL,
   `fb_secret` varchar(200) DEFAULT NULL,
   `fb_intro` text,
-  `fb_type_id` int(11) DEFAULT NULL,
 
+  `tw_profile_id` int(11) NOT NULL DEFAULT 0,
+  `tw_type_id` int(11) NOT NULL DEFAULT 0,
   `tw_key` varchar(200) DEFAULT NULL,
   `tw_secret` varchar(200) DEFAULT NULL,
   `tw_intro` text,
-  `tw_type_id` int(11) DEFAULT NULL,
 
+  `lk_profile_id` int(11) NOT NULL DEFAULT 0,
+  `lk_type_id` int(11) NOT NULL DEFAULT 0,
   `lk_key` varchar(200) DEFAULT NULL,
   `lk_secret` varchar(200) DEFAULT NULL,
   `lk_intro` text,
-  `lk_type_id` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=4 ;
 

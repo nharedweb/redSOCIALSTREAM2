@@ -8,7 +8,7 @@
  */
 defined('_JEXEC') or die;
 jimport('joomla.application.component.view');
-class RedSocialStreamViewAccess_token extends JViewLegacy
+class RedSocialStreamViewGetToken extends RedSocialStreamView
 {
 	function display($tpl = null)
 	{

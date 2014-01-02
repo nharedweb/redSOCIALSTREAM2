@@ -9,6 +9,14 @@
 defined('_JEXEC') or die;
 ?>
 <div class="control-group">
+    <div class="control-label">
+        <?php echo $this->form->getLabel('fb_profile_id'); ?>
+    </div>
+    <div class="controls">
+        <?php echo $this->form->getInput('fb_profile_id'); ?>
+    </div>
+</div>
+<div class="control-group">
 	<div class="control-label">
 		<?php echo $this->form->getLabel('fb_key'); ?>
 	</div>

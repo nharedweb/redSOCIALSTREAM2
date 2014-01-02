@@ -12,6 +12,14 @@
 
         <!-- Facebook tab -->
         <field
+                name="fb_profile_id"
+                type="configprofiles"
+                class="inputbox"
+                label="COM_REDSOCIALSTREAM_CONFIGURE_FIELD_PROFILE_ID_LABEL"
+                description="COM_REDSOCIALSTREAM_CONFIGURE_FIELD_PROFILE_ID_DESC"
+                required="true"
+                />
+        <field
                 name="fb_key"
                 type="text"
                 class="inputbox"
@@ -45,6 +53,14 @@
 
         <!-- Twitter tab -->
         <field
+                name="tw_profile_id"
+                type="configprofiles"
+                class="inputbox"
+                label="COM_REDSOCIALSTREAM_CONFIGURE_FIELD_PROFILE_ID_LABEL"
+                description="COM_REDSOCIALSTREAM_CONFIGURE_FIELD_PROFILE_ID_DESC"
+                required="true"
+                />
+        <field
                 name="tw_key"
                 type="text"
                 class="inputbox"
@@ -77,6 +93,14 @@
                 />
 
         <!-- Linkedin tab -->
+        <field
+                name="lk_profile_id"
+                type="configprofiles"
+                class="inputbox"
+                label="COM_REDSOCIALSTREAM_CONFIGURE_FIELD_PROFILE_ID_LABEL"
+                description="COM_REDSOCIALSTREAM_CONFIGURE_FIELD_PROFILE_ID_DESC"
+                required="true"
+                />
         <field
                 name="lk_key"
                 type="text"

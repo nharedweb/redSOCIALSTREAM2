@@ -29,19 +29,6 @@ class RedSocialStreamViewConfigure extends RedSocialStreamView
      */
     public function display($tpl = null)
     {
-        $db = JFactory::getDbo();
-        $query = $db->getQuery(true);
-        $query->select('id')
-              ->from('#__redsocialstream_configures');
-        $db->setQuery($query);
-        $results = $db->loadObject();
-        if(!empty($results))
-        {
-            $name = $this->getName();
-            $model = $this->getModel('configure');
-            $model->setState($name.'.id', $results->id);
-        }
-
         $this->setLayout('edit');
 
         $this->form	= $this->get('Form');
@@ -85,15 +72,15 @@ class RedSocialStreamViewConfigure extends RedSocialStreamView
 
         if (empty($this->item->id))
         {
-            $cancel = RToolbarBuilder::createCancelButton('dashboard.cancel');
+            $cancel = RToolbarBuilder::createCancelButton('configure.cancel');
         }
 
         else
         {
-            $cancel = RToolbarBuilder::createCloseButton('dashboard.cancel');
+            $cancel = RToolbarBuilder::createCloseButton('configure.cancel');
         }
 
-        //$group->addButton($cancel);
+        $group->addButton($cancel);
 
         $toolbar = new RToolbar;
         $toolbar->addGroup($group);

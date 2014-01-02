@@ -8,13 +8,11 @@
  */
 defined('_JEXEC') or die;
 
-jimport('joomla.application.component.model');
-
 require_once(JPATH_SITE . '/components/com_redsocialstream/helpers/helper.php');
 include(JPATH_SITE . '/components/com_redsocialstream/helpers/linkedin/linkedin.php');
 require_once(JPATH_SITE . '/components/com_redsocialstream/helpers/twitter/OAuth.php');
 
-class RedSocialStreamModelAccess_token extends JModelLegacy
+class RedSocialStreamModelGetToken extends RModelAdmin
 {
 	function getData()
 	{

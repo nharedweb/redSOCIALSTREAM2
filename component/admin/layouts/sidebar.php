@@ -19,6 +19,40 @@ if( isset($data['active']) )
 }
 ?>
 <ul class="nav nav-tabs nav-stacked">
+<?php if ($active === 'configure' || $active === 'gettoken') : ?>
+    <li>
+        <a href="<?php echo JRoute::_('index.php?option=com_redsocialstream&view=dashboard') ?>">
+            <i class="icon-dashboard"></i>
+            <?php echo JText::_('COM_REDSOCIALSTREAM_DASHBOARD_TITLE') ?>
+        </a>
+    </li>
+    <li>
+    <?php if ($active === 'configure') : ?>
+        <a class="active" href="<?php echo JRoute::_('index.php?option=com_redsocialstreamb&view=configure') ?>">
+            <i class="icon-ticket"></i>
+            <?php echo JText::_('COM_REDSOCIALSTREAM_CONFIGURES_LIST_TITLE') ?>
+        </a>
+    <?php else : ?>
+        <a href="<?php echo JRoute::_('index.php?option=com_redsocialstream&view=configure') ?>">
+            <i class="icon-ticket"></i>
+            <?php echo JText::_('COM_REDSOCIALSTREAM_CONFIGURES_LIST_TITLE') ?>
+        </a>
+    <?php endif; ?>
+    </li>
+    <li>
+        <?php if ($active === 'gettoken') : ?>
+            <a class="active" href="<?php echo JRoute::_('index.php?option=com_redsocialstreamb&view=gettoken') ?>">
+                <i class="icon-ticket"></i>
+                <?php echo JText::_('COM_REDSOCIALSTREAM_GETTOKEN_LIST_TITLE') ?>
+            </a>
+        <?php else : ?>
+            <a href="<?php echo JRoute::_('index.php?option=com_redsocialstream&view=gettoken') ?>">
+                <i class="icon-ticket"></i>
+                <?php echo JText::_('COM_REDSOCIALSTREAM_GETTOKEN_LIST_TITLE') ?>
+            </a>
+        <?php endif; ?>
+    </li>
+<?php else : ?>
     <li>
         <?php if ($active === 'dashboard') : ?>
             <a class="active" href="<?php echo JRoute::_('index.php?option=com_redsocialstreamb&view=dashboard') ?>">
@@ -72,11 +106,10 @@ if( isset($data['active']) )
         <?php endif; ?>
     </li>
     <li>
-        <?php if ($active !== 'configure') : ?>
-            <a class="active" href="<?php echo JRoute::_('index.php?option=com_redsocialstream&view=configure') ?>">
-                <i class="icon-ticket"></i>
-                <?php echo JText::_('COM_REDSOCIALSTREAM_CONFIGURES_LIST_TITLE') ?>
-            </a>
-        <?php endif; ?>
+        <a href="<?php echo JRoute::_('index.php?option=com_redsocialstream&view=configure') ?>">
+            <i class="icon-ticket"></i>
+            <?php echo JText::_('COM_REDSOCIALSTREAM_CONFIGURES_LIST_TITLE') ?>
+        </a>
     </li>
+<?php endif; ?>
 </ul>
