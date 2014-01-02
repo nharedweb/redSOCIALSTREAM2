@@ -27,38 +27,4 @@ class RedSocialStreamControllerConfigure extends RControllerForm
     {
         parent::__construct($config);
     }
-
-    public function save($key = null, $urlVar = null)
-    {
-        $app = JFactory::getApplication();
-        $context = "$this->option.edit.$this->context";
-
-        $id = $app->input->getInt('id');
-        $app->setUserState($context.'.id', $id);
-
-        $task = $this->getTask();
-        if($task == 'save')
-        {
-            $this->view_list = 'dashboard';
-        }
-
-        parent::save($key, $urlVar);
-    }
-
-    public function cancel($key = null)
-    {
-        $app = JFactory::getApplication();
-        $context = "$this->option.edit.$this->context";
-
-        $id = $app->input->getInt('id');
-        $app->setUserState($context.'.id', $id);
-
-        $task = $this->getTask();
-        if($task == 'cancel')
-        {
-            $this->view_list = 'dashboard';
-        }
-
-        parent::cancel($key);
-    }
 }

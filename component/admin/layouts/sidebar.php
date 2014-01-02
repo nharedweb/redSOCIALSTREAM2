@@ -19,7 +19,7 @@ if( isset($data['active']) )
 }
 ?>
 <ul class="nav nav-tabs nav-stacked">
-<?php if ($active === 'configure' || $active === 'gettoken') : ?>
+<?php if ($active === 'configures' || $active === 'accesstokens' || $active === 'profiles') : ?>
     <li>
         <a href="<?php echo JRoute::_('index.php?option=com_redsocialstream&view=dashboard') ?>">
             <i class="icon-dashboard"></i>
@@ -27,28 +27,41 @@ if( isset($data['active']) )
         </a>
     </li>
     <li>
-    <?php if ($active === 'configure') : ?>
-        <a class="active" href="<?php echo JRoute::_('index.php?option=com_redsocialstreamb&view=configure') ?>">
+        <?php if ($active === 'profiles') : ?>
+            <a class="active" href="<?php echo JRoute::_('index.php?option=com_redsocialstream&view=profiles') ?>">
+                <i class="icon-ticket"></i>
+                <?php echo JText::_('COM_REDSOCIALSTREAM_PROFILES_LIST_TITLE') ?>
+            </a>
+        <?php else : ?>
+            <a href="<?php echo JRoute::_('index.php?option=com_redsocialstream&view=profiles') ?>">
+                <i class="icon-ticket"></i>
+                <?php echo JText::_('COM_REDSOCIALSTREAM_PROFILES_LIST_TITLE') ?>
+            </a>
+        <?php endif; ?>
+    </li>
+    <li>
+    <?php if ($active === 'configures') : ?>
+        <a class="active" href="<?php echo JRoute::_('index.php?option=com_redsocialstreamb&view=configures') ?>">
             <i class="icon-ticket"></i>
             <?php echo JText::_('COM_REDSOCIALSTREAM_CONFIGURES_LIST_TITLE') ?>
         </a>
     <?php else : ?>
-        <a href="<?php echo JRoute::_('index.php?option=com_redsocialstream&view=configure') ?>">
+        <a href="<?php echo JRoute::_('index.php?option=com_redsocialstream&view=configures') ?>">
             <i class="icon-ticket"></i>
             <?php echo JText::_('COM_REDSOCIALSTREAM_CONFIGURES_LIST_TITLE') ?>
         </a>
     <?php endif; ?>
     </li>
     <li>
-        <?php if ($active === 'gettoken') : ?>
-            <a class="active" href="<?php echo JRoute::_('index.php?option=com_redsocialstreamb&view=gettoken') ?>">
+        <?php if ($active === 'accesstokens') : ?>
+            <a class="active" href="<?php echo JRoute::_('index.php?option=com_redsocialstreamb&view=accesstokens') ?>">
                 <i class="icon-ticket"></i>
-                <?php echo JText::_('COM_REDSOCIALSTREAM_GETTOKEN_LIST_TITLE') ?>
+                <?php echo JText::_('COM_REDSOCIALSTREAM_ACCESSTOKENS_LIST_TITLE') ?>
             </a>
         <?php else : ?>
-            <a href="<?php echo JRoute::_('index.php?option=com_redsocialstream&view=gettoken') ?>">
+            <a href="<?php echo JRoute::_('index.php?option=com_redsocialstream&view=accesstokens') ?>">
                 <i class="icon-ticket"></i>
-                <?php echo JText::_('COM_REDSOCIALSTREAM_GETTOKEN_LIST_TITLE') ?>
+                <?php echo JText::_('COM_REDSOCIALSTREAM_ACCESSTOKENS_LIST_TITLE') ?>
             </a>
         <?php endif; ?>
     </li>
@@ -106,7 +119,7 @@ if( isset($data['active']) )
         <?php endif; ?>
     </li>
     <li>
-        <a href="<?php echo JRoute::_('index.php?option=com_redsocialstream&view=configure') ?>">
+        <a href="<?php echo JRoute::_('index.php?option=com_redsocialstream&view=configures') ?>">
             <i class="icon-ticket"></i>
             <?php echo JText::_('COM_REDSOCIALSTREAM_CONFIGURES_LIST_TITLE') ?>
         </a>

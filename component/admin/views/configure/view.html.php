@@ -64,10 +64,12 @@ class RedSocialStreamViewConfigure extends RedSocialStreamView
         if ($user->authorise('core.admin', 'com_redsocialstream'))
         {
             $save = RToolbarBuilder::createSaveButton('configure.apply');
-                $saveAndClose = RToolbarBuilder::createSaveAndCloseButton('configure.save');
+            $saveAndNew = RToolbarBuilder::createSaveAndNewButton('configure.save2new');
+            $saveAndClose = RToolbarBuilder::createSaveAndCloseButton('configure.save');
 
             $group->addButton($save)
-                ->addButton($saveAndClose);
+                ->addButton($saveAndClose)
+                ->addButton($saveAndNew);
         }
 
         if (empty($this->item->id))

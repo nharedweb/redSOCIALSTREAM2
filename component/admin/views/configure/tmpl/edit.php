@@ -22,24 +22,12 @@ $input = JFactory::getApplication()->input;
 
     <ul class="nav nav-tabs">
         <li class="active">
-            <a href="#fb" data-toggle="tab"><?php echo JText::_('COM_REDSOCIALSTREAM_CONFIGURE_FB'); ?></a>
-        </li>
-        <li>
-            <a href="#tw" data-toggle="tab"><?php echo JText::_('COM_REDSOCIALSTREAM_CONFIGURE_TW'); ?></a>
-        </li>
-        <li>
-            <a href="#lk" data-toggle="tab"><?php echo JText::_('COM_REDSOCIALSTREAM_CONFIGURE_LK'); ?></a>
+            <a href="#general" data-toggle="tab"><?php echo JText::_('COM_REDSOCIALSTREAM_GENERAL'); ?></a>
         </li>
     </ul>
     <div class="tab-content">
-        <div class="tab-pane active" id="fb">
-            <?php echo $this->loadTemplate('facebook') ?>
-        </div>
-        <div class="tab-pane" id="tw">
-            <?php echo $this->loadTemplate('twitter') ?>
-        </div>
-        <div class="tab-pane" id="lk">
-            <?php echo $this->loadTemplate('linkedin') ?>
+        <div class="tab-pane active" id="general">
+            <?php echo $this->loadTemplate('general') ?>
         </div>
     </div>
 

@@ -12,21 +12,21 @@ $views = array(
     'groups',
     'profiles',
 	'posts',
-	'configure',
+	'configures',
 );
 
 $images = array(
     'groups' => JHtml::image('media/com_redsocialstream/images/48_redsocialstream_group.png', JText::_('COM_REDSOCIALSTREAM_GROUPS_LIST_TITLE')),
 	'profiles' => JHtml::image('media/com_redsocialstream/images/48_redsocialstream_profile.png', JText::_('COM_REDSOCIALSTREAM_PROFILES_LIST_TITLE')),
 	'posts' => JHtml::image('media/com_redsocialstream/images/48_redsocialstream_post.png', JText::_('COM_REDSOCIALSTREAM_POSTS_LIST_TITLE')),
-	'configure' => JHtml::image('media/com_redsocialstream/images/48_redsocialstream_configure.png', JText::_('COM_REDSOCIALSTREAM_CONFIGURES_LIST_TITLE')),
+	'configures' => JHtml::image('media/com_redsocialstream/images/48_redsocialstream_configure.png', JText::_('COM_REDSOCIALSTREAM_CONFIGURES_LIST_TITLE')),
 );
 
 $texts = array(
     'groups' => JText::_('COM_REDSOCIALSTREAM_GROUPS_LIST_TITLE'),
 	'profiles' => JText::_('COM_REDSOCIALSTREAM_PROFILES_LIST_TITLE'),
 	'posts' => JText::_('COM_REDSOCIALSTREAM_POSTS_LIST_TITLE'),
-	'configure' => JText::_('COM_REDSOCIALSTREAM_CONFIGURES_LIST_TITLE'),
+	'configures' => JText::_('COM_REDSOCIALSTREAM_CONFIGURES_LIST_TITLE'),
 );
 
 $countView = count($views);

@@ -21,19 +21,4 @@ class RedSocialStreamTableConfigure extends RTable
      * @var  integer
      */
     public $id;
-
-    /**
-     * @var  string
-     */
-    public $intro;
-
-    /**
-     * @var  string
-     */
-    public $key;
-
-    /**
-     * @var  integer
-     */
-    public $secret;
-} 
+}

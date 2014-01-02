@@ -10,7 +10,7 @@ defined('_JEXEC') or die;
 
 JFormHelper::loadFieldClass('list');
 
-class JFormFieldConfigProfiles extends JFormFieldlist
+class JFormFieldProfiles extends JFormFieldlist
 {
 	/**
 	 * The form field type.
@@ -18,7 +18,7 @@ class JFormFieldConfigProfiles extends JFormFieldlist
 	 * @var		string
 	 * @since	1.6
 	 */
-	protected $type = 'configprofiles';
+	protected $type = 'profiles';
 
 	/**
 	 * Method to get the field input markup.
@@ -29,22 +29,7 @@ class JFormFieldConfigProfiles extends JFormFieldlist
 	protected function getInput()
 	{
         // Initialize variables.
-        $profileTypeKey = (string) $this->element['name'];
-        if($profileTypeKey == 'fb_profile_id')
-        {
-            $profileTypeName = 'facebook';
-            $selectedId = (int) $this->form->getValue('fb_profile_id');
-        }
-        else if($profileTypeKey == 'tw_profile_id')
-        {
-            $profileTypeName = 'twitter';
-            $selectedId = (int) $this->form->getValue('tw_profile_id');
-        }
-        else if($profileTypeKey == 'lk_profile_id')
-        {
-            $profileTypeName = 'linkedin';
-            $selectedId = (int) $this->form->getValue('lk_profile_id');
-        }
+        $typeId = (int) $this->form->getValue('type_id');
 
 		$options 	= array();
 
@@ -52,12 +37,13 @@ class JFormFieldConfigProfiles extends JFormFieldlist
         $query = $db->getQuery(true);
         $query->select('p.id AS id, p.name AS name')
               ->from('#__redsocialstream_profiles p')
-              ->innerJoin("#__redsocialstream_profiles_types t ON t.id = p.type_id AND (t.name LIKE '%" .$profileTypeName. "%' OR t.title LIKE '%". $profileTypeName ."%')");
+              ->innerJoin("#__redsocialstream_profiles_types t ON t.id = p.type_id"); // AND t.id = " . $typeId);
         $query->where('p.state = 1');
         $db->setQuery($query);
 
         $results = $db->loadObjectList();
 
+        $selectedId = (int) $this->form->getValue('profile_id');
         if (!empty($results))
         {
             foreach($results as $item)

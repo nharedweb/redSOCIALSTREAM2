@@ -9,18 +9,25 @@
                 description="COM_REDSOCIALSTREAM_ID_DESC"
                 readonly="true"
                 />
-
-        <!-- Facebook tab -->
         <field
-                name="fb_profile_id"
-                type="configprofiles"
+                name="type_id"
+                type="ptypes"
+                default="0"
+                readonly="true"
+                label="COM_REDSOCIALSTREAM_CONFIGURE_FIELD_TYPE_LABEL"
+                description="COM_REDSOCIALSTREAM_CONFIGURE_FIELD_TYPE_DESC"
+                required="true"
+                />
+        <field
+                name="profile_id"
+                type="profiles"
                 class="inputbox"
                 label="COM_REDSOCIALSTREAM_CONFIGURE_FIELD_PROFILE_ID_LABEL"
                 description="COM_REDSOCIALSTREAM_CONFIGURE_FIELD_PROFILE_ID_DESC"
                 required="true"
                 />
         <field
-                name="fb_key"
+                name="key"
                 type="text"
                 class="inputbox"
                 label="COM_REDSOCIALSTREAM_CONFIGURE_FIELD_FB_KEY_LABEL"
@@ -28,7 +35,7 @@
                 required="true"
                 />
         <field
-                name="fb_secret"
+                name="secret"
                 type="password"
                 class="inputbox"
                 label="COM_REDSOCIALSTREAM_CONFIGURE_FIELD_FB_SECRET_LABEL"
@@ -36,102 +43,31 @@
                 required="true"
                 />
         <field
-                name="fb_intro"
+                name="intro"
                 type="textarea"
                 class="inputbox"
                 label="COM_REDSOCIALSTREAM_CONFIGURE_FIELD_INTRO_LABEL"
                 description="COM_REDSOCIALSTREAM_CONFIGURE_FIELD_INTRO_DESC"
                 />
         <field
-                name="fb_type_id"
-                type="configtypes"
-                default="0"
-                readonly="true"
-                label="COM_REDSOCIALSTREAM_CONFIGURE_FIELD_TYPE_LABEL"
-                description="COM_REDSOCIALSTREAM_CONFIGURE_FIELD_TYPE_DESC"
-                />
-
-        <!-- Twitter tab -->
-        <field
-                name="tw_profile_id"
-                type="configprofiles"
-                class="inputbox"
-                label="COM_REDSOCIALSTREAM_CONFIGURE_FIELD_PROFILE_ID_LABEL"
-                description="COM_REDSOCIALSTREAM_CONFIGURE_FIELD_PROFILE_ID_DESC"
-                required="true"
-                />
-        <field
-                name="tw_key"
+                name="ordering"
                 type="text"
                 class="inputbox"
-                label="COM_REDSOCIALSTREAM_CONFIGURE_FIELD_TW_KEY_LABEL"
-                description="COM_REDSOCIALSTREAM_CONFIGURE_FIELD_TW_KEY_DESC"
+                label="COM_REDSOCIALSTREAM_FIELD_ORDERING_LABEL"
+                description="COM_REDSOCIALSTREAM_FIELD_ORDERING_DESC"
+                />
+
+        <field
+                name="state"
+                type="radio"
+                label="COM_REDSOCIALSTREAM_FIELD_STATE_LABEL"
+                description="COM_REDSOCIALSTREAM_FIELD_STATE_DESC"
                 required="true"
-                />
-        <field
-                name="tw_secret"
-                type="password"
-                class="inputbox"
-                label="COM_REDSOCIALSTREAM_CONFIGURE_FIELD_TW_SECRET_LABEL"
-                description="COM_REDSOCIALSTREAM_CONFIGURE_FIELD_TW_SECRET_DESC"
-                required="true"
-                />
-        <field
-                name="tw_intro"
-                type="textarea"
-                class="inputbox"
-                label="COM_REDSOCIALSTREAM_CONFIGURE_FIELD_INTRO_LABEL"
-                description="COM_REDSOCIALSTREAM_CONFIGURE_FIELD_INTRO_DESC"
-                />
-        <field
-                name="tw_type_id"
-                type="configtypes"
-                readonly="true"
+                class="btn-group"
                 default="1"
-                label="COM_REDSOCIALSTREAM_CONFIGURE_FIELD_TYPE_LABEL"
-                description="COM_REDSOCIALSTREAM_CONFIGURE_FIELD_TYPE_DESC"
-                />
-
-        <!-- Linkedin tab -->
-        <field
-                name="lk_profile_id"
-                type="configprofiles"
-                class="inputbox"
-                label="COM_REDSOCIALSTREAM_CONFIGURE_FIELD_PROFILE_ID_LABEL"
-                description="COM_REDSOCIALSTREAM_CONFIGURE_FIELD_PROFILE_ID_DESC"
-                required="true"
-                />
-        <field
-                name="lk_key"
-                type="text"
-                class="inputbox"
-                label="COM_REDSOCIALSTREAM_CONFIGURE_FIELD_LK_KEY_LABEL"
-                description="COM_REDSOCIALSTREAM_CONFIGURE_FIELD_LK_KEY_DESC"
-                required="true"
-                />
-        <field
-                name="lk_secret"
-                type="password"
-                class="inputbox"
-                label="COM_REDSOCIALSTREAM_CONFIGURE_FIELD_LK_SECRET_LABEL"
-                description="COM_REDSOCIALSTREAM_CONFIGURE_FIELD_LK_SECRET_DESC"
-                required="true"
-                />
-        <field
-                name="lk_intro"
-                type="textarea"
-                class="inputbox"
-                label="COM_REDSOCIALSTREAM_CONFIGURE_FIELD_INTRO_LABEL"
-                description="COM_REDSOCIALSTREAM_CONFIGURE_FIELD_INTRO_DESC"
-                />
-        <field
-                name="lk_type_id"
-                type="configtypes"
-                readonly="true"
-                default="0"
-                label="COM_REDSOCIALSTREAM_CONFIGURE_FIELD_TYPE_LABEL"
-                description="COM_REDSOCIALSTREAM_CONFIGURE_FIELD_TYPE_DESC"
-                />
-
+                >
+            <option value="1">JPUBLISHED</option>
+            <option value="0">JUNPUBLISHED</option>
+        </field>
     </fieldset>
 </form>
