@@ -32,6 +32,7 @@ class RedSocialStreamControllerAccessTokens extends RControllerAdmin
         // Get token for twitter
         $app = JFactory::getApplication();
         $input = $app->input;
+        $sesson = JFactory::getSession();
 
         $configId = $input->get('cid', array(), 'array');
 
@@ -58,6 +59,10 @@ class RedSocialStreamControllerAccessTokens extends RControllerAdmin
             switch($type)
             {
                 case 'facebook':
+                    $sesson->set('fb_profile_id', $result->profile_name);
+                    $redirect_url = urlencode(JURI::base() . "index.php?option=com_redsocialstream&view=accesstokens");
+
+                    header("location: https://www.facebook.com/dialog/oauth?client_id=" . $result->key . "&redirect_uri=" . $redirect_url . "&scope=manage_pages,publish_stream&manage_pages=1&publish_stream=1");
                     break;
 
                 case 'twitter':
