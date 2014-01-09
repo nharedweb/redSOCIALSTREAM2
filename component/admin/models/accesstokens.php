@@ -52,6 +52,22 @@ class RedSocialStreamModelAccessTokens extends RModelList
         return $query;
     }
 
+    public function getConfigureInfo($id)
+    {
+        $db = JFactory::getDbo();
+        $query = $db->getQuery(true);
+        $query->select('c.*, p.name AS profile_name, t.name AS type_name')
+            ->from('#__redsocialstream_configures c')
+            ->innerJoin('#__redsocialstream_profiles p ON p.id = c.profile_id')
+            ->innerJoin('#__redsocialstream_profiles_types t ON t.id = p.type_id')
+            ->where('c.state = 1')
+            ->where('c.id = ' . $id);
+        $db->setQuery($query);
+        $result = $db->loadObject();
+
+        return $result;
+    }
+
     public function updateToken($id, $data)
     {
         $db = $this->getDbo();

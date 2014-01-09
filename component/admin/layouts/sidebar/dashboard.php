@@ -9,6 +9,7 @@
 
 defined('JPATH_REDCORE') or die;
 ?>
+<!--
 <ul class="nav nav-tabs nav-stacked">
     <li>
         <a href="<?php echo JRoute::_('index.php?option=com_redsocialstream&view=group&layout=edit') ?>">
@@ -29,3 +30,4 @@ defined('JPATH_REDCORE') or die;
 		</a>
 	</li>
 </ul>
+-->

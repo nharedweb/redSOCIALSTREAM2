@@ -12,7 +12,7 @@ defined('_JEXEC') or die;
 $doc = JFactory::getDocument();
 $user = JFactory::getUser();
 
-$action = JRoute::_('index.php?option=com_redsocialstream&view=configure');
+$action = JRoute::_('index.php?option=com_redsocialstream&view=accesstokens');
 $listOrder = $this->state->get('list.ordering');
 $listDirn = $this->state->get('list.direction');
 $saveOrder = $listOrder == 'ordering';

@@ -88,12 +88,10 @@ class RedSocialStreamViewAccessTokens extends RedSocialStreamView
      */
     public function display($tpl = null)
     {
-        $model = $this->getModel('AccessTokens');
-
-        $this->items = $model->getItems();
-        $this->state = $model->getState();
-        $this->pagination = $model->getPagination();
-        $this->filterForm = $model->getForm();
+        $this->items = $this->get('Items');
+        $this->state = $this->get('State');
+        $this->pagination = $this->get('Pagination');
+        $this->filterForm = $this->get('Form');
 
         parent::display($tpl);
     }
@@ -119,49 +117,13 @@ class RedSocialStreamViewAccessTokens extends RedSocialStreamView
         $user = JFactory::getUser();
 
         $firstGroup = new RToolbarButtonGroup;
-        $secondGroup = new RToolbarButtonGroup;
-
-//        $new = RToolbarBuilder::createNewButton('gettokens.add');
-//        $firstGroup->addButton($new);
-//
-//        $edit = RToolbarBuilder::createEditButton('gettokens.edit');
-//        $firstGroup->addButton($edit);
 
         $accessToken = RToolbarBuilder::createStandardButton('accesstokens.getAccessToken', 'Get Access Token');
 
-//        $publish = RToolbarBuilder::createPublishButton('accesstokens.publish');
-//        $unpublish = RToolbarBuilder::createUnpublishButton('accesstokens.unpublish');
-
-        $firstGroup//->addButton($publish)
-            //->addButton($unpublish)
-            ->addButton($accessToken);
-
-//        if ($user->authorise('core.admin', 'com_socialstream'))
-//        {
-//            // Add / edit
-//            if ($canDo->get('core.create') || (count($user->getAuthorisedCategories('com_socialstream', 'core.create'))) > 0)
-//            {
-//                $new = RToolbarBuilder::createNewButton('group.add');
-//                $firstGroup->addButton($new);
-//            }
-//
-//            if ($canDo->get('core.edit'))
-//            {
-//                $edit = RToolbarBuilder::createEditButton('group.edit');
-//                $firstGroup->addButton($edit);
-//            }
-//
-//            // Delete / Trash
-//            if ($canDo->get('core.delete'))
-//            {
-//                $delete = RToolbarBuilder::createDeleteButton('groups.delete');
-//                $secondGroup->addButton($delete);
-//            }
-//        }
+        $firstGroup->addButton($accessToken);
 
         $toolbar = new RToolbar;
-        $toolbar->addGroup($firstGroup)
-            ->addGroup($secondGroup);
+        $toolbar->addGroup($firstGroup);
 
         return $toolbar;
     }
